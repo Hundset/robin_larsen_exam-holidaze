@@ -1,0 +1,129 @@
+@import "./partials/variables";
+@import "./partials/hotelcards";
+@import "./partials/contactpage-and-forms";
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Sail&family=Ubuntu:wght@300;400&display=swap');
+
+@font-face {
+    font-family: copperplate;
+    src: url("../fonts/Copperplate.ttc");
+    font-style: normal;
+}
+
+//UNIVERSAL ELEMENTS:
+
+html {
+    min-height: 100&;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    color: white;
+    margin: 0;
+    min-height: 100%;
+    max-width: 100%;
+    font-size: 1em;
+}
+
+body:after {
+    content: "";
+    position: fixed;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    background: url(../media/leonard-rb-S-gj2BlwWjU-unsplash.jpg) center center;
+    background-size: cover;
+}
+
+//nav and links
+
+nav {
+
+    background-color: $primary-colour;
+    display: flex;
+    justify-content: space-evenly;
+
+    .nav-link {
+        font-family: copperplate;
+        color: white;
+        padding: 2% 5% 2% 5%;
+        justify-content: center;
+    }
+
+    .logo-link {
+        width: 200px;
+    }
+
+    .logo {
+        align-self: center;
+        padding: 7% 5% 5% 5%;
+        width: 90%;
+    }
+
+    .nav-form {
+
+        width: 100px;
+        margin-top: 1%;
+        text-align: center;
+
+        input {
+            border: none;
+            border-radius: 20px;
+            padding: 0.5% 2% 0.5% 5%;
+            width: 100px;
+        }
+
+        button {
+            width: 80px;
+            padding: 1%;font-size: 1em;
+            background-color: $primary-colour;
+            border: 1px solid white;
+            border-radius: 20px;
+        }
+    }
+
+}
+
+.active {
+    text-decoration: underline;
+}
+
+h2 {
+    font-family: Sail;
+    margin-top: 0%;
+    padding: 1%;
+    padding-left: 10%;
+    background-color: $secondary-transparent;
+}
+
+h4,h5 {
+    font-family: Ubuntu;
+    color: $secondary-colour;
+}
+
+a {
+    text-decoration: none;
+}
+
+//buttons:
+
+button {
+    width: 50%;
+    margin: 6% 0% 6% 0%;
+    font-size: 1.1em;
+    color: white;
+    font-family: Copperplate;
+    background-color: $button-colour;
+    border-style: none;
+    border-radius: 16px;
+    padding: 7%;
+    cursor: pointer;
+}

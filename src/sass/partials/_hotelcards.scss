@@ -1,0 +1,132 @@
+@import "./variables";
+
+.searchbar {
+    border-radius: 20px;
+    border-style: none;
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    padding: 0.5%;
+    font-size: 0.8em;
+    -moz-box-shadow: inset 0 0 3px black;
+   -webkit-box-shadow: inset 0 0 3px black;
+   box-shadow: inset 0 0 3px black;
+}
+
+.hotel--list {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+}
+
+.hoteldiv {
+    color: black;
+    width: 340px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    margin: 30px;
+    margin-bottom: 2.5%;
+    box-shadow: 1px 3px 30px black;
+    font-size: 0.9em;
+
+    &--header {
+        font-family: Ubuntu;
+        color: $secondary-colour; 
+
+        display: flex;
+        justify-content: center;
+        p {
+            justify-content: flex-start;
+            margin: 4% 10% 4% 1%;
+        }
+
+        p:last-of-type {
+            margin: 4% 0% 4% 1%;
+        }
+    }
+
+    &--content {
+    background-color: $content-box;
+        padding-bottom: 0.1%;
+
+            p { 
+                margin-top: 1.5%;
+            }
+
+        &--img {
+            padding: 0% 3% 0% 3%;
+        }
+    }
+
+}
+
+.ubuntu-span {
+    font-family: Ubuntu;
+    color: $secondary-colour; 
+    margin: 0% 4% 0% 4%;
+}
+
+.address-span {
+    font-family: Iowan Old Style;
+    color: $body-text;
+}
+
+//specific page for hotel
+
+.hoteldiv__specific {
+    @extend .hoteldiv; 
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    &--img {
+        width: 80%;
+        margin: auto;
+    }
+
+    &--header {
+        font-family: Ubuntu;
+        color: $secondary-colour; 
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 3% 0% 1% 0%;
+        font-size: 1em;
+    }
+
+    h4, p {
+        width: 85%;
+        padding: 2%;
+        margin: auto;
+    }
+
+    h5 {
+        margin-bottom: 1%;
+    }
+
+    p {
+        padding-top: 0%;
+    }
+
+    ul {
+        margin: auto;
+        padding-bottom: 5%;
+    }
+
+    li {
+        width: 40%;
+        list-style: none;
+        display: inline-block;
+        padding: 0% 2% 0% 2%;
+    }
+
+    a {
+        color: $link-colour;
+        text-decoration: underline;
+    }
+}

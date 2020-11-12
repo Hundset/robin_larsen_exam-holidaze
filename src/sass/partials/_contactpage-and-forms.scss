@@ -1,0 +1,153 @@
+@import "./variables";
+
+.valMessage {
+    font-size: 1.1em;
+    font-family: Ubuntu;
+    color: $button-colour;
+    font-weight: bold;
+    text-align: center;
+}
+
+//enquiry form:
+
+.form--enquiry {
+
+    display: block;
+    background-color: $secondary-transparent;
+    width: 400px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border: 2px solid white;
+
+    .container {
+        padding: 10%;
+    }
+
+    label {
+        margin: 2% 0% 3% -2%;
+        font-family: Ubuntu;
+        font-weight: bold;
+        font-size: 0.9em;
+
+    }
+
+    input, label, textarea {
+        display: inline-block;
+        width: 100%;
+        border: none;
+        padding: 2% 0% 2% 2%;
+    }
+
+    textarea {
+        height: 150px;
+    }
+
+    &--names, &--email-phone {
+        
+        input:first-of-type {
+        margin: 1% 5% 0% 0%;
+        }
+
+        input {
+            width: 47%;
+        }
+    }
+
+    .form--buttonbox {
+        background: white;
+        margin: 0%;
+        padding: 4%;
+    }
+
+    button {
+        display: block;
+        margin: auto;
+        margin-top: 5%;
+        width: 88%;
+        padding: 3% 2% 3% 2%;
+        border-radius: 10px;
+    }
+}
+
+//CONTACT PAGE:
+
+.contact--pagecontent {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.form--contact, .contact-box {
+    align-self: center;
+}
+
+//contact form:
+
+.form--contact {
+    @extend .form--enquiry;
+    //margin-left: 25%;
+
+    input, textarea {
+        padding: 5% 5% 5% 5%;
+    }
+
+    input {
+        margin-bottom: 5%;
+        border-radius: 30px;
+    }
+
+    textarea {
+        border-radius: 16px;
+    }
+}
+
+//contact box:
+
+.contact--box {
+    width: 100%;
+    min-height: 100%;
+    margin-bottom: 0%;
+    background-color: $content-box;
+    border-top: 2px solid $secondary-colour;
+    padding: 0% 0% 3% 0%;
+    
+    &--container {
+        width: 25%;
+        margin: auto;
+        padding: 1% 0% 3% 0%;
+        border-bottom: 1px solid $secondary-colour;
+    }
+
+    button {
+        width: 60%;
+        display: block;
+        margin: auto;
+        margin-top: 5%;
+        padding: 5%;
+    }
+
+    h4 {
+        text-align: center;
+        padding-bottom: 5%;
+        border-bottom: 1px solid $secondary-colour;
+    }
+
+    h5 {
+        color: black;
+    }
+
+    p, li {
+        color: $body-text;
+    }
+
+    p, h5, li {
+        margin-left: 15%;
+    }
+
+    li {
+        list-style-type: none;
+        margin-left: 2%;
+    }
+}
