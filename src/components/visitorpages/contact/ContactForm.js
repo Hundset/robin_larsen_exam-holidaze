@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; 
 import * as yup from "yup";
+import { ContactUrl } from "../../constants/Constants";
 
 const contactSchema = yup.object().shape({
 
@@ -24,14 +25,15 @@ function ContactForm() {
 
     const [message, setMessage] = useState('')
 
-    //const [contactMsg, setContactMsg] = useState('')
-
-    //reactLocalStorage.setObject('var', {'test': 'test'});
-    const onSubmit = data => {
+    async function onSubmit(data) {
 
         console.log("Thanks for contacting us!")
         setMessage("Thanks for contacting us!");
-        console.log(JSON.stringify(data));
+        console.log(data)
+
+        const options = { method: "POST", body: JSON.stringify(data) };
+
+        await fetch(ContactUrl, options);
     }
 
     return (
