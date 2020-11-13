@@ -11,7 +11,7 @@ const contactSchema = yup.object().shape({
     email: yup.string()
     .required('We will at least need your e-mail')
     .email("Not a valid e-mail"),
-    userMessage: yup.string()
+    message: yup.string()
     .required("Message is required")
     .min(10, "Message must be at least 10 characters")
     
@@ -23,12 +23,12 @@ function ContactForm() {
         validationSchema: contactSchema
     });
 
-    const [message, setMessage] = useState('')
+    const [valMessage, setValMessage] = useState('')
 
     async function onSubmit(data) {
 
         console.log("Thanks for contacting us!")
-        setMessage("Thanks for contacting us!");
+        setValMessage("Thanks for contacting us!");
         console.log(data)
 
         const options = { method: "POST", body: JSON.stringify(data) };
@@ -48,13 +48,13 @@ function ContactForm() {
             <input name="email" placeholder="E-mail..." ref={register}></input>
             {errors.email && <p>{errors.email.message}</p>}
 
-            <textarea name="userMessage" placeholder="Message..." ref={register}></textarea>
-            {errors.userMessage && <p>{errors.userMessage.message}</p>}
+            <textarea name="message" placeholder="Message..." ref={register}></textarea>
+            {errors.message && <p>{errors.message.message}</p>}
 
         </div>
         <div className="form--buttonbox">
                 <button type="submit">Submit</button>
-                <p className="valMessage">{message}</p>
+                <p className="valMessage">{valMessage}</p>
             </div>
         </form>
     </div>
