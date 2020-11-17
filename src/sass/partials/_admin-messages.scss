@@ -1,0 +1,73 @@
+@import "./variables";
+
+.dashboard {
+    display: block;
+    width: 80%;
+    margin: auto;
+    background-color: $content-box;
+    color: $body-text;
+
+    .dashboard--messages {
+
+        padding: 1%;
+        margin-bottom: 3%;
+        display: flex;
+
+        h3 {
+            text-align: center;
+            font-family: Ubuntu;
+        }
+
+        .dashboard--messages--list {
+            width: 49%;
+            display: inline-block;
+        }
+
+        .dashboard--messages--list:first-of-type {
+            border-right: 2px solid $body-text;
+        }
+    }
+}
+
+.message-div {
+    width: 300px; 
+    background-color: white;
+    border: 2px solid $secondary-colour;
+    margin: auto;
+    margin-bottom: 5%;
+    padding: 1%;
+
+        ul {
+            padding: 5%;
+            width: 90%;
+        }
+        ul
+        li {
+            list-style: none;
+            margin-left: 0%;
+            padding: 2%;
+        }
+        .li__link {
+            text-decoration: underline;
+            color: $link-colour;
+        }
+        .ubuntu-span__message {
+            font-family: Ubuntu;
+            color: $secondary-colour; 
+        }
+        .message-box {
+            background-color: $content-box;
+        }
+
+}
+
+.delete-button {
+    width: 40%;
+    display: block;
+    padding: 5%;
+    border-radius: 8px;
+    margin: auto;
+    margin-bottom: 5%;
+    background-color: red;
+    font-size: 0.8em;
+}

@@ -4,14 +4,13 @@ import { useHistory } from "react-router-dom";
 
 export default function Login() {
     
-    
     const history = useHistory();
     const onSubmit = () => {
         
         history.push('/adminpage');
 
     }
-    
+
     const username = "Admin";
     const password = "1991";
 

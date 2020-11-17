@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; 
 import * as yup from "yup";
-import { ContactUrl } from "../../constants/Constants";
+import { BaseUrl, headers } from "../../constants/Constants";
+import { Link } from "react-router-dom";
 
 const contactSchema = yup.object().shape({
 
@@ -27,13 +28,25 @@ function ContactForm() {
 
     async function onSubmit(data) {
 
+        const myMessage = {
+            "name": data.name,
+            "email": data.email,
+            "message": data.message,
+        }
+
+        console.log(JSON.stringify(data.name));
+
+        const url = BaseUrl + "contacts";
+
         console.log("Thanks for contacting us!")
         setValMessage("Thanks for contacting us!");
         console.log(data)
 
-        const options = { method: "POST", body: JSON.stringify(data) };
+        const options = { headers, method: "POST", body: JSON.stringify(myMessage) };
 
-        await fetch(ContactUrl, options);
+        await fetch(url, options) 
+            .then((r) => r.json())
+            .then((j) => console.log(j))
     }
 
     return (
@@ -43,13 +56,13 @@ function ContactForm() {
         <div className="container">
 
             <input name="name" placeholder="Your name..." ref={register}></input>
-            {errors.name && <p>{errors.name.message}</p>}
+            {errors.Name && <p>{errors.Name.message}</p>}
 
             <input name="email" placeholder="E-mail..." ref={register}></input>
-            {errors.email && <p>{errors.email.message}</p>}
+            {errors.Email && <p>{errors.Email.message}</p>}
 
             <textarea name="message" placeholder="Message..." ref={register}></textarea>
-            {errors.message && <p>{errors.message.message}</p>}
+            {errors.Message && <p>{errors.Message.message}</p>}
 
         </div>
         <div className="form--buttonbox">
@@ -70,9 +83,9 @@ function ContactForm() {
                     <li>Saturday: Closed</li>
                     <li>Sunday and Holidays: Closed</li>
                 </ul>
-                <h4>Want to get more specific?</h4>
-                <p>Check out our Enquiry page if you want to leave us a more detailed message</p>
-                <button>Go to Enquiry Page</button>
+                <h4>Looking to book a hotel?</h4>
+                <p>Check out our Enquiry page if you want to book with us via our website</p>
+                <Link to={"/enquiry"}><button>Go to Enquiry Page</button></Link>
             </div>
         </div> 
     </>

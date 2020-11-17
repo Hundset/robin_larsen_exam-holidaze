@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BaseUrl } from "../../constants/Constants";
+import { BaseUrl, headers } from "../../constants/Constants";
 import Search from "./Search";
 import HotelObj from "../hotel/HotelObj";
 
@@ -7,10 +7,12 @@ export function Home() {
     const [hotels, setHotels] = useState([]);
     const [searchedHotels, setSearchedHotels] = useState([]);
 
-    const url = BaseUrl + "hotels";
+    const url = BaseUrl + "establishments";
+
+    const options = { headers }
 
     useEffect (() => {
-        fetch(url)
+        fetch(url, options)
             .then((response) => response.json())
             .then((json) => {
                 console.log(json);
@@ -42,10 +44,10 @@ export function Home() {
             <Search handleSearch={searchHotels}/>
 
             <div className="hotel--list">
-                {searchedHotels.map(hotel => {const { id, name, imageurl, price, address } = hotel;
+                {searchedHotels.map(hotel => {const { id, name, image, price, email } = hotel;
 
                 return (
-                    <HotelObj key={id} id={id} name={name} imageurl={imageurl} price={price} address={address} />
+                    <HotelObj key={id} id={id} name={name} image={image} price={price} email={email} />
                     );
                 })}
             </div>

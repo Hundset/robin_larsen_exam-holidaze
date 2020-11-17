@@ -1,13 +1,18 @@
 import React from "react";
+import DeleteContact from "./DeleteContact";
 
-function ContactMessages({ name, email, message }) {
+function ContactMessages({ id, name, email, message }) {
+
     return (
-        <div className="contactdiv">
+        <div className="message-div" id={id}>
             <ul>
-                <li>Name: {name}</li>
-                <li>Email: {email}</li>
-                <li>Message: {message}</li>
+                <li><span className="ubuntu-span__message">From {name}</span></li>
+                <li><span className="ubuntu-span__message">Email</span></li>
+                <li className="li__link">{email}</li>
+                <li><span className="ubuntu-span__message">Message:</span></li>
+                <li className="message-box">{message}</li>
             </ul>
+            <DeleteContact id={id}></DeleteContact>
         </div>
     )
 }

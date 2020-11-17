@@ -1,10 +1,9 @@
-const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjA1Mjc4MDE3LCJleHAiOjE2MDc4NzAwMTd9.lTxwERVWSslhkEJl3WFJpITN2Ay4g4kCv2pt88Hon_4";
-export const BaseUrl = "http://localhost:1337/";
-export const ContactUrl = BaseUrl + "contact-messages";
-export const FETCH_OPTIONS = {
-    headers: {
+const KEY = "5f8e944e2d9d284eb9586f44";
+export const BaseUrl = "https://us-central1-noroff-final-exam.cloudfunctions.net/api/v1/";
+export const ContactUrl = BaseUrl + "contacts";
+export const headers = {
         "Content-Type": "application/json",
         key: KEY,
-    },
 };
+export const DELETE = "DELETE";
 

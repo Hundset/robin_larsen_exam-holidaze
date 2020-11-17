@@ -27,7 +27,7 @@ function Layout() {
                 <Route path="/" className="active" exact component={Home}/>
                 <Route path="/contact" component={Contact}/>
                 <Route path="/enquiry" component={Enquiry}></Route>
-                <Route path="/hotels/:id" component={HotelSpecifics}></Route>
+                <Route path="/establishments/:id" component={HotelSpecifics}></Route>
                 <Route path="/adminpage" component={AdminPage}></Route>
             </Switch>
         </Router>

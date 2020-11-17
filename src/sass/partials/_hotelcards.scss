@@ -58,6 +58,9 @@
 
         &--img {
             padding: 0% 3% 0% 3%;
+            overflow: scroll;
+            height: 170px;
+            bottom: 0%;
         }
     }
 
@@ -69,7 +72,7 @@
     margin: 0% 4% 0% 4%;
 }
 
-.address-span {
+.email-span {
     font-family: Iowan Old Style;
     color: $body-text;
 }
@@ -119,10 +122,14 @@
     }
 
     li {
-        width: 40%;
+        width: 50%;
         list-style: none;
         display: inline-block;
         padding: 0% 2% 0% 2%;
+
+        span {
+            margin-left: 15%;
+        }
     }
 
     a {

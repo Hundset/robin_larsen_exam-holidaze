@@ -1,42 +1,24 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
-
-const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
+import { BaseUrl, headers } from "../../constants/Constants";
 
 const enquirySchema = yup.object().shape({
 
-    firstName: yup.string()
+    name: yup.string()
     .required('First name is required')
     .min(2, "Name must be at least 2 letters"),
-    lastName: yup.string()
-    .required("Last name is required")
-    .min(2, "Surname must be at least 2 letters"),
-    company: yup.lazy(value => {
-        if (
-            value &&
-            Object.values(value).some(val => !(val === null || val === undefined || val === ""))
-        ) {
-            return yup.string().min(4, "Company name must be at least 4 letters")
-        }
-        return yup.mixed().notRequired();
-    }),
     email: yup.string()
     .required('We will at least need your e-mail')
     .email("Not a valid e-mail"),
-    phone: yup.lazy(value => {
-        if (
-            value &&
-            Object.values(value).some(val => !(val === null || val === undefined || val === ""))
-        ) {
-            return yup.string().matches(phoneRegExp, "Needs a valid phone number")
-        }
-        return yup.mixed().notRequired();
-    }),
-    userMessage: yup.string()
-    .required("Message is required")
-    .min(10, "Message must be at least 10 characters")
-    
+    hotelBooking: yup.string()
+    .required("Hotel required"),
+    checkIn: yup.string()
+    .required("Need a check-in date")
+    .min(10, "Must be more than 10 characters"),
+    checkOut: yup.string()
+    .required("Need a check-out date")
+    .min(10, "Must be at least 10 characters"),
 });
 
 function EnquiryForm() {
@@ -45,42 +27,61 @@ function EnquiryForm() {
         validationSchema: enquirySchema
     });
 
-    const [message, setMessage] = useState('')
+    const [valMessage, setValMessage] = useState('')
 
-    function onSubmit() {
+    async function onSubmit(data) {
         console.log("Thanks for sending us your enquiry!")
-        setMessage("Thanks for sending us your enquiry!");
+        setValMessage("Thanks for sending us your enquiry!");
+
+            const myEnquiry = {
+                "name": data.name,
+                "email": data.email,
+                "establishmentId": data.hotelBooking,
+                "checkIn" : data.checkIn,
+                "checkOut" : data.checkOut
+            };
+    
+            console.log(JSON.stringify(data.name));
+    
+            const url = BaseUrl + "enquiries";
+    
+            console.log("Thanks for booking with us!")
+            setValMessage("Thanks for booking with us!");
+            console.log(data)
+    
+            const options = { headers, method: "POST", body: JSON.stringify(myEnquiry) };
+    
+            await fetch(url, options) 
+                .then((r) => r.json())
+                .then((j) => console.log(j))
     }
 
     return (
         <form className="form--enquiry" onSubmit={handleSubmit(onSubmit)}>
         <div className="container">
-            <div className="form--enquiry--names">
-                <label htmlFor="firstName lastName">What's your name? *</label>
-                    <input name="firstName" placeholder="First..." ref={register}></input>
-                    <input name="lastName" placeholder="Last..." ref={register}></input>
+            <div></div>
+                <label htmlFor="name">What's your name? *</label>
+                    <input name="name" placeholder="Name..." ref={register}></input>
                     {errors.firstName && <p>{errors.firstName.message}</p>}
-                    {errors.lastName && <p>{errors.lastName.message}</p>}
-            </div>
-            <div className="form--enquiry--company">
-                <label htmlFor="company">Contacting us on behalf of a company?</label>
-                    <input name="company" placeholder="Company name..." ref={register}></input>
-                    {errors.company && <p>{errors.company.message}</p>}
-            </div>
-            <div className="form--enquiry--email-phone">
-                <label htmlFor="email phone">How can we get in touch? *</label>
+            <div>
+                <label htmlFor="email">How can we get in touch? *</label>
                     <input name="email" placeholder="E-mail..." ref={register}></input>
-                    <input name="phone" placeholder="Phone..." ref={register}></input>
                     {errors.email && <p>{errors.email.message}</p>}
-                    {errors.phone && <p>{errors.phone.message}</p>}
             </div>
-            <label htmlFor="message">What do you wish to be enquire about? *</label>
-            <textarea name="userMessage" placeholder="Message..." ref={register}></textarea>
-            {errors.userMessage && <p>{errors.userMessage.message}</p>}
+            <label htmlFor="message">Which hotel you booking for? *</label>
+            <input name="hotelBooking" placeholder="Hotel..." ref={register}></input>
+            {errors.hotelBooking && <p>{errors.hotelBooking.message}</p>}
+            <div className="form--enquiry--checkin-checkout">
+                <label htmlFor="email">How long you staying? *</label>
+                    <input name="checkIn" placeholder="Check in date..." ref={register}></input>
+                    <input name="checkOut" placeholder="Check out date..." ref={register}></input>
+                    {errors.checkin && <p>{errors.checkin.message}</p>}
+                    {errors.checkout && <p>{errors.checkout.message}</p>}
+            </div>
         </div>
         <div className="form--buttonbox">
                 <button type="submit">Submit</button>
-                <p className="valMessage">{message}</p>
+                <p className="valMessage">{valMessage}</p>
             </div>
         </form>
     );
