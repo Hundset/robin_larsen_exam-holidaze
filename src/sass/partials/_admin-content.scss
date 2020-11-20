@@ -2,28 +2,47 @@
 
 .dashboard {
     display: block;
-    width: 80%;
+    width: 60%;
     margin: auto;
     background-color: $content-box;
     color: $body-text;
 
-    .dashboard--messages {
+    &--header {
+        background-color: $content-box;
+        margin-bottom: 3%;
 
+        &--link {
+            font-family: copperplate;
+            font-size: 1.2em;
+            color: $secondary-colour;
+            text-align: center;
+            padding: 2% 0% 2% 0%;
+            width: 50%;
+            margin: auto;
+        }
+
+        .header--link__inactive {
+            background-color: white;
+        }
+    }
+
+    &--messages {
         padding: 1%;
         margin-bottom: 3%;
         display: flex;
 
-        h3 {
+        h4 {
             text-align: center;
             font-family: Ubuntu;
+            color: $body-text;
         }
 
-        .dashboard--messages--list {
+        &--list {
             width: 49%;
             display: inline-block;
         }
 
-        .dashboard--messages--list:first-of-type {
+        &--list:first-of-type {
             border-right: 2px solid $body-text;
         }
     }
@@ -57,6 +76,7 @@
         }
         .message-box {
             background-color: $content-box;
+            padding: 5%;
         }
 
 }

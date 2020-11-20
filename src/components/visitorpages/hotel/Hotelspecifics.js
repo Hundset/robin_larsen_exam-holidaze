@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BaseUrl, headers } from "../../constants/Constants";
 import { useParams } from "react-router-dom";
 
-function HotelSpecifics() {
+function Hotelspecifics() {
 
     const [info, setInfo] = useState({});
 
@@ -11,6 +11,8 @@ function HotelSpecifics() {
     console.log("id", id)
 
     const url = BaseUrl + "establishments/" + id;
+
+    console.log(url)
 
     useEffect(() => {
         fetch(url, headers)
@@ -40,4 +42,4 @@ function HotelSpecifics() {
 
 }
 
-export default HotelSpecifics;
+export default Hotelspecifics;

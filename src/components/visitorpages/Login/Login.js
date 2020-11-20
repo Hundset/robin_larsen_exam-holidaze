@@ -1,34 +1,53 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation, Link } from "react-router-dom";
 
 export default function Login() {
-    
-    const history = useHistory();
-    const onSubmit = () => {
-        
-        history.push('/adminpage');
+    const username = "Admin";
+    const password = "Admin";
 
+    const location = useLocation(); 
+
+    const history = useHistory()
+
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = () => {
+        history.push('/adminpage');
     }
 
-    const username = "Admin";
-    const password = "1991";
-
-    var { register, handleSubmit } = useForm();
-
+    const render = () => {
+        if (location.pathname === "/adminpage" || location.pathname === "/adminhotel") {
+            return (
+            <>
+            <div className="nav-form">
+                <p>Welcome Admin</p> 
+                <Link to="/"><button>Logout</button></Link>
+            </div>
+            </>
+            );
+        } else {
+            return (
+                <form className="nav-form" onSubmit={handleSubmit(onSubmit)}>
+                    <input name="userName" placeholder="Username..." ref={register({
+                        validate: {
+                            userEqual: value => (value === username)
+                        }
+                        })}></input>
+                    <input name="adminPassword" placeholder="Password..." ref={register({
+                        validate: {
+                            pwdEqual: value => (value === password)
+                        }
+                        })}></input>
+                        <button type="submit">login</button>
+                </form>
+            );
+        }
+    }
     return (
-        <form className="nav-form" onSubmit={handleSubmit(onSubmit)}>
-            <input name="userName" placeholder="Username..." ref={register({
-                validate: {
-                    userEqual: value => (value === username)
-                }
-                })}></input>
-            <input name="adminPassword" placeholder="password..." ref={register({
-                validate: {
-                    pwdEqual: value => (value === password)
-                }
-                })}></input>
-                <button type="submit">login</button>
-        </form>
+        <div>
+            {render()}
+        </div>
     );
+    
 }
