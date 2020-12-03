@@ -2,8 +2,11 @@
 @import "./partials/hotelcards";
 @import "./partials/contactpage-and-forms";
 @import "./partials/admin-content";
+@import "./partials/confirm-alert";
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Sail&family=Ubuntu:wght@300;400&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&family=Cantarell:wght@400;700&display=swap');
 
 @font-face {
     font-family: copperplate;
@@ -14,7 +17,7 @@
 //UNIVERSAL ELEMENTS:
 
 html {
-    min-height: 100&;
+    min-height: 100;
     box-sizing: border-box;
 }
 
@@ -46,21 +49,32 @@ body:after {
 
 //nav and links
 
-nav {
+.nav__primary {
 
     background-color: $primary-colour;
     display: flex;
     justify-content: space-evenly;
 
     .nav-link {
-        font-family: copperplate;
+        font-family: Cantarell;
+        font-weight: bold;
+        font-size: 0.8em;
+        text-transform: uppercase;
         color: white;
         padding: 2% 5% 2% 5%;
         justify-content: center;
     }
 
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+
     .logo-link {
         width: 200px;
+    }
+
+    #logo-link__mobile {
+        display: none;
     }
 
     .logo {
@@ -69,11 +83,20 @@ nav {
         width: 90%;
     }
 
-    .nav-form {
+    #logo__mobile {
+        display: none;
+    }
+
+    .nav-form--container {
 
         width: 100px;
-        margin-top: 1%;
+        padding-top: 2%;
         text-align: center;
+
+        p {
+            margin: 0%;
+            font-family: Ubuntu;
+        }
 
         input {
             border: none;
@@ -84,10 +107,16 @@ nav {
 
         button {
             width: 80px;
-            padding: 1%;font-size: 1em;
+            padding: 1%;
+            font-size: 0.8em;
             background-color: $primary-colour;
             border: 1px solid white;
             border-radius: 20px;
+        }
+
+        button:hover {
+            background-color: white;
+            color: $primary-colour;
         }
     }
 
@@ -119,12 +148,41 @@ a {
 button {
     width: 50%;
     margin: 6% 0% 6% 0%;
-    font-size: 1.1em;
+    font-size: 0.8em;
     color: white;
-    font-family: Copperplate;
+    font-family: Cantarell;
+    text-transform: uppercase;
+    font-weight: bold;
     background-color: $button-colour;
     border-style: none;
     border-radius: 16px;
     padding: 7%;
     cursor: pointer;
 }
+
+button:hover {
+    background-color: white;
+    color: $button-colour;
+    border: 2px solid $button-colour;
+}
+
+//error: 
+
+.error--container {
+    display: block;
+    background-color: white;
+    padding: 0.5em;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2%;
+    border: 1px solid red; 
+    border-radius: 8px;
+
+        &--message {
+            color: red;
+            width: 90%;
+            margin: auto;
+        }
+}
+
+@import "./partials/media-queries";

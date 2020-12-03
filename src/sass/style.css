@@ -1,1 +1,967 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Sail&family=Ubuntu:wght@300;400&display=swap");
+.searchbar {
+  border-radius: 20px;
+  border-style: none;
+  display: block;
+  width: 180px;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  padding: 0.5%;
+  padding-left: 1%;
+  font-size: 0.8em;
+  -webkit-box-shadow: inset 0 0 3px black;
+  box-shadow: inset 0 0 3px black;
+}
+
+.hotel--list {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+.hoteldiv, .hoteldiv__specific {
+  color: black;
+  width: 340px;
+  display: inline-block;
+  background-color: white;
+  border-radius: 10px;
+  margin: 30px;
+  margin-bottom: 2.5%;
+  -webkit-box-shadow: 1px 3px 30px black;
+          box-shadow: 1px 3px 30px black;
+  font-size: 0.9em;
+}
+
+.hoteldiv--header {
+  font-family: Ubuntu;
+  color: #3B8792;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hoteldiv--header p {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin: 4% 10% 4% 1%;
+}
+
+.hoteldiv--header p:last-of-type {
+  margin: 4% 0% 4% 1%;
+}
+
+.hoteldiv--content {
+  background-color: #F8F6F7;
+  padding-bottom: 0.1%;
+}
+
+.hoteldiv--content p {
+  margin-top: 1.5%;
+}
+
+.hoteldiv--content--img {
+  padding: 0% 3% 0% 3%;
+  overflow: scroll;
+  height: 170px;
+  bottom: 0%;
+}
+
+.ubuntu-span {
+  font-family: Ubuntu;
+  color: #3B8792;
+  margin: 0% 4% 0% 4%;
+}
+
+.email-span {
+  font-family: Iowan Old Style;
+  color: #6A6A6A;
+}
+
+.hoteldiv__specific {
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-bottom: 3%;
+}
+
+.hoteldiv__specific--img {
+  width: 80%;
+  margin: auto;
+}
+
+.hoteldiv__specific--header {
+  font-family: Ubuntu;
+  color: #3B8792;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 3% 0% 1% 0%;
+  font-size: 1em;
+}
+
+.hoteldiv__specific h4, .hoteldiv__specific p {
+  width: 85%;
+  padding: 2%;
+  margin: auto;
+}
+
+.hoteldiv__specific h5 {
+  margin-bottom: 1%;
+}
+
+.hoteldiv__specific p {
+  padding-top: 0%;
+}
+
+.hoteldiv__specific ul {
+  margin: auto;
+  padding-bottom: 5%;
+}
+
+.hoteldiv__specific li {
+  width: 50%;
+  list-style: none;
+  display: inline-block;
+  padding: 0% 2% 0% 2%;
+}
+
+.hoteldiv__specific li span {
+  margin-left: 15%;
+}
+
+.hoteldiv__specific a {
+  color: #1371C2;
+  text-decoration: underline;
+}
+
+.hoteldiv__specific button {
+  display: block;
+  margin: auto;
+  width: 50%;
+  padding: 3%;
+  border-radius: 10px;
+  text-transform: lowercase;
+}
+
+.valMessage {
+  font-size: 1.1em;
+  font-family: Ubuntu;
+  color: #27C25F;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form--enquiry, .form--contact, .dashboard .form--hotel {
+  display: block;
+  background-color: rgba(59, 135, 140, 0.6);
+  width: 400px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 2px solid white;
+}
+
+.form--enquiry .container, .form--contact .container, .dashboard .form--hotel .container {
+  padding: 10%;
+}
+
+.form--enquiry label, .form--contact label, .dashboard .form--hotel label {
+  margin: 2% 0% 3% -2%;
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.form--enquiry input, .form--contact input, .dashboard .form--hotel input, .form--enquiry label, .form--contact label, .dashboard .form--hotel label, .form--enquiry textarea, .form--contact textarea, .dashboard .form--hotel textarea, .form--enquiry select, .form--contact select, .dashboard .form--hotel select {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  padding: 2% 0% 2% 2%;
+}
+
+.form--enquiry textarea, .form--contact textarea, .dashboard .form--hotel textarea {
+  height: 150px;
+}
+
+.form--enquiry--checkin-checkout input:first-of-type, .dashboard .form--hotel--price-guests input:first-of-type {
+  margin: 1% 5% 0% 0%;
+}
+
+.form--enquiry--checkin-checkout input, .dashboard .form--hotel--price-guests input {
+  width: 47%;
+}
+
+.form--enquiry .form--buttonbox, .form--contact .form--buttonbox, .dashboard .form--hotel .form--buttonbox {
+  background: white;
+  margin: 0%;
+  padding: 4%;
+}
+
+.form--enquiry button, .form--contact button, .dashboard .form--hotel button {
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  width: 88%;
+  padding: 3% 2% 3% 2%;
+  border-radius: 10px;
+}
+
+.contact--pagecontent {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form--contact, .contact-box {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.form--contact input, .form--contact textarea {
+  padding: 5% 5% 5% 5%;
+}
+
+.form--contact input {
+  margin-bottom: 5%;
+  border-radius: 30px;
+}
+
+.form--contact textarea {
+  border-radius: 16px;
+}
+
+.contact--box {
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 0%;
+  background-color: #F8F6F7;
+  border-top: 2px solid #3B8792;
+  padding: 0% 0% 3% 0%;
+}
+
+.contact--box--container {
+  width: 25%;
+  margin: auto;
+  padding: 1% 0% 3% 0%;
+  border-bottom: 1px solid #3B8792;
+}
+
+.contact--box button {
+  width: 60%;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.contact--box h4 {
+  text-align: center;
+  padding-bottom: 5%;
+  border-bottom: 1px solid #3B8792;
+}
+
+.contact--box h5 {
+  color: black;
+}
+
+.contact--box p, .contact--box li {
+  color: #6A6A6A;
+}
+
+.contact--box p, .contact--box h5, .contact--box li {
+  margin-left: 15%;
+}
+
+.contact--box li {
+  list-style-type: none;
+  margin-left: 2%;
+}
+
+.valMessage {
+  font-size: 1.1em;
+  font-family: Ubuntu;
+  color: #27C25F;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form--enquiry, .form--contact, .dashboard .form--hotel {
+  display: block;
+  background-color: rgba(59, 135, 140, 0.6);
+  width: 400px;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 2px solid white;
+}
+
+.form--enquiry .container, .form--contact .container, .dashboard .form--hotel .container {
+  padding: 10%;
+}
+
+.form--enquiry label, .form--contact label, .dashboard .form--hotel label {
+  margin: 2% 0% 3% -2%;
+  font-family: Ubuntu;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.form--enquiry input, .form--contact input, .dashboard .form--hotel input, .form--enquiry label, .form--contact label, .dashboard .form--hotel label, .form--enquiry textarea, .form--contact textarea, .dashboard .form--hotel textarea, .form--enquiry select, .form--contact select, .dashboard .form--hotel select {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  padding: 2% 0% 2% 2%;
+}
+
+.form--enquiry textarea, .form--contact textarea, .dashboard .form--hotel textarea {
+  height: 150px;
+}
+
+.form--enquiry--checkin-checkout input:first-of-type, .dashboard .form--hotel--price-guests input:first-of-type {
+  margin: 1% 5% 0% 0%;
+}
+
+.form--enquiry--checkin-checkout input, .dashboard .form--hotel--price-guests input {
+  width: 47%;
+}
+
+.form--enquiry .form--buttonbox, .form--contact .form--buttonbox, .dashboard .form--hotel .form--buttonbox {
+  background: white;
+  margin: 0%;
+  padding: 4%;
+}
+
+.form--enquiry button, .form--contact button, .dashboard .form--hotel button {
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  width: 88%;
+  padding: 3% 2% 3% 2%;
+  border-radius: 10px;
+}
+
+.contact--pagecontent {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.form--contact, .contact-box {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.form--contact input, .form--contact textarea {
+  padding: 5% 5% 5% 5%;
+}
+
+.form--contact input {
+  margin-bottom: 5%;
+  border-radius: 30px;
+}
+
+.form--contact textarea {
+  border-radius: 16px;
+}
+
+.contact--box {
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: 0%;
+  background-color: #F8F6F7;
+  border-top: 2px solid #3B8792;
+  padding: 0% 0% 3% 0%;
+}
+
+.contact--box--container {
+  width: 25%;
+  margin: auto;
+  padding: 1% 0% 3% 0%;
+  border-bottom: 1px solid #3B8792;
+}
+
+.contact--box button {
+  width: 60%;
+  display: block;
+  margin: auto;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.contact--box h4 {
+  text-align: center;
+  padding-bottom: 5%;
+  border-bottom: 1px solid #3B8792;
+}
+
+.contact--box h5 {
+  color: black;
+}
+
+.contact--box p, .contact--box li {
+  color: #6A6A6A;
+}
+
+.contact--box p, .contact--box h5, .contact--box li {
+  margin-left: 15%;
+}
+
+.contact--box li {
+  list-style-type: none;
+  margin-left: 2%;
+}
+
+.dashboard {
+  display: block;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 5%;
+  padding-bottom: 3%;
+  background-color: #F8F6F7;
+  color: #6A6A6A;
+}
+
+.dashboard h4 {
+  text-align: center;
+  font-family: Ubuntu;
+  color: #6A6A6A;
+}
+
+.dashboard--header {
+  background-color: #F8F6F7;
+  margin-bottom: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.dashboard--header--link {
+  font-family: copperplate;
+  font-size: 1.2em;
+  color: #3B8792;
+  text-align: center;
+  padding: 2% 0% 2% 0%;
+  width: 50%;
+  margin: auto;
+}
+
+.dashboard--header .header--link__inactive {
+  background-color: white;
+}
+
+.dashboard--messages {
+  padding: 1%;
+  margin-bottom: 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dashboard--messages--list {
+  width: 49%;
+  display: inline-block;
+}
+
+.dashboard--messages--list:first-of-type {
+  border-right: 2px solid #6A6A6A;
+}
+
+.dashboard .form--hotel {
+  background-color: white;
+}
+
+.dashboard .form--hotel input {
+  border: 1px solid #6A6A6A;
+}
+
+.dashboard .form--hotel label {
+  color: #3B8792;
+}
+
+.dashboard .form--hotel button {
+  width: 50%;
+  margin-right: 0%;
+  border-radius: 5px;
+}
+
+.dashboard .form--hotel, .dashboard .dashboard--hotel-list {
+  -webkit-box-shadow: 3px 3px 10px darkgray;
+          box-shadow: 3px 3px 10px darkgray;
+}
+
+.dashboard--hotel-list {
+  background-color: white;
+  width: 400px;
+  list-style: none;
+  margin: auto;
+  -webkit-padding-start: 0px;
+          padding-inline-start: 0px;
+  padding-bottom: 3%;
+}
+
+.dashboard--hotel-list--container {
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+  border-bottom: 1px solid #6A6A6A;
+}
+
+.dashboard--hotel-list--item {
+  text-align: center;
+}
+
+.dashboard--hotel-list--container:last-of-type {
+  border-bottom: none;
+}
+
+.message-div {
+  width: 300px;
+  background-color: white;
+  border: 2px solid #3B8792;
+  margin: auto;
+  margin-bottom: 5%;
+  padding: 1%;
+}
+
+.message-div ul {
+  padding: 5%;
+  width: 90%;
+}
+
+.message-div ul li {
+  list-style: none;
+  margin-left: 0%;
+  padding: 2%;
+}
+
+.message-div .li__link {
+  text-decoration: underline;
+  color: #1371C2;
+}
+
+.message-div .ubuntu-span__message {
+  font-family: Ubuntu;
+  color: #3B8792;
+}
+
+.message-div .message-box {
+  background-color: #F8F6F7;
+  padding: 5%;
+}
+
+.delete-button, .delete-button__hotel, #react-confirm-alert button {
+  width: 40%;
+  display: block;
+  padding: 5%;
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 5%;
+  background-color: red;
+  font-size: 0.8em;
+}
+
+.delete-button__hotel {
+  width: 50%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  padding: 3%;
+  border-radius: 4px;
+}
+
+.delete-button:hover, .delete-button__hotel:hover, #react-confirm-alert button:hover {
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+}
+
+#react-confirm-alert {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  width: 30%;
+  top: 30%;
+  left: 35%;
+}
+
+#react-confirm-alert h1 {
+  color: red;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+#react-confirm-alert button {
+  width: 30%;
+  font-size: 0.9em;
+  padding: 3%;
+}
+
+#react-confirm-alert .react-confirm-alert-body {
+  background-color: #F8F6F7;
+  border: 1px solid red;
+  -webkit-box-shadow: 3px 3px 10px darkgray;
+          box-shadow: 3px 3px 10px darkgray;
+}
+
+@font-face {
+  font-family: copperplate;
+  src: url("../fonts/Copperplate.ttc");
+  font-style: normal;
+}
+
+html {
+  min-height: 100 html;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  color: white;
+  margin: 0;
+  min-height: 100%;
+  max-width: 100%;
+  font-size: 1em;
+}
+
+body:after {
+  content: "";
+  position: fixed;
+  min-height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background: url(../media/leonard-rb-S-gj2BlwWjU-unsplash.jpg) center center;
+  background-size: cover;
+}
+
+.nav__primary {
+  background-color: #C15036;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.nav__primary .nav-link {
+  font-family: copperplate;
+  color: white;
+  padding: 2% 5% 2% 5%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav__primary .nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav__primary .logo-link {
+  width: 200px;
+}
+
+.nav__primary #logo-link__mobile {
+  display: none;
+}
+
+.nav__primary .logo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 7% 5% 5% 5%;
+  width: 90%;
+}
+
+.nav__primary #logo__mobile {
+  display: none;
+}
+
+.nav__primary .nav-form--container {
+  width: 100px;
+  padding-top: 2%;
+  text-align: center;
+}
+
+.nav__primary .nav-form--container p {
+  margin: 0%;
+}
+
+.nav__primary .nav-form--container input {
+  border: none;
+  border-radius: 20px;
+  padding: 0.5% 2% 0.5% 5%;
+  width: 100px;
+}
+
+.nav__primary .nav-form--container button {
+  width: 80px;
+  padding: 1%;
+  font-size: 1em;
+  background-color: #C15036;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.nav__primary .nav-form--container button:hover {
+  background-color: white;
+  color: #C15036;
+}
+
+.active {
+  text-decoration: underline;
+}
+
+h2 {
+  font-family: Sail;
+  margin-top: 0%;
+  padding: 1%;
+  padding-left: 10%;
+  background-color: rgba(59, 135, 140, 0.6);
+}
+
+h4, h5 {
+  font-family: Ubuntu;
+  color: #3B8792;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  width: 50%;
+  margin: 6% 0% 6% 0%;
+  font-size: 1.1em;
+  color: white;
+  font-family: Copperplate;
+  background-color: #27C25F;
+  border-style: none;
+  border-radius: 16px;
+  padding: 7%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: #27C25F;
+  border: 2px solid #27C25F;
+}
+
+.error--container {
+  display: block;
+  background-color: white;
+  padding: 0.5em;
+  width: 90%;
+  margin: auto;
+  border: 1px solid red;
+  border-radius: 8px;
+}
+
+.error--container--message {
+  color: red;
+  width: 90%;
+  margin: auto;
+}
+
+@media (max-width: 1300px) {
+  .dashboard {
+    width: 70%;
+  }
+}
+
+@media (max-width: 950px) {
+  .dashboard {
+    width: 85%;
+  }
+}
+
+@media (max-width: 800px) {
+  .dashboard {
+    width: 90%;
+  }
+  .message-div {
+    width: 200px;
+    font-size: 0.9em;
+  }
+  #react-confirm-alert {
+    width: 40%;
+    top: 40%;
+    left: 28%;
+  }
+  #react-confirm-alert h1 {
+    font-size: 0.9em;
+  }
+  #react-confirm-alert button {
+    width: 50%;
+    font-size: 0.9em;
+    padding: 3%;
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    width: 80%;
+  }
+  .dashboard .message-div {
+    width: 210px;
+    font-size: 0.8em;
+  }
+  .nav__primary {
+    background-color: #C15036;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+  }
+  .nav__primary .nav-link {
+    font-size: 0.9em;
+    padding: 2% 8% 2% 8%;
+    width: 100px;
+    margin: auto;
+  }
+  .nav__primary .logo-link {
+    display: block;
+    margin: auto;
+  }
+  .nav__primary .logo {
+    padding-bottom: 0%;
+  }
+  .nav__primary .nav-form--container {
+    display: inline;
+    padding-top: 0%;
+  }
+  .nav__primary .nav-form--container form {
+    height: 50px;
+    width: 300px;
+    margin: auto;
+  }
+  .nav__primary .nav-form--container p {
+    margin: 0%;
+  }
+  .nav__primary .nav-form--container input {
+    border: none;
+    text-align: left;
+    border-radius: 20px;
+    padding: 0.5% 2% 0.5% 1%;
+    margin-right: 2%;
+    width: 70px;
+    font-size: 0.7em;
+  }
+  .nav__primary .nav-form--container button {
+    width: 60px;
+    padding: 0.4%;
+    font-size: 0.8em;
+  }
+  .hoteldiv, .hoteldiv__specific {
+    width: 80%;
+  }
+  .contact--box--container {
+    width: 40%;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    width: 96%;
+  }
+  .dashboard .message-div {
+    width: 210px;
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .searchbar {
+    padding-left: 3%;
+  }
+  .hotel--list {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .hoteldiv, .hoteldiv__specific {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+  .hoteldiv--content--img {
+    height: 100%;
+  }
+  .hoteldiv__specific {
+    width: 340px;
+  }
+  .form--enquiry, .form--contact, .dashboard .form--hotel {
+    width: 80%;
+    font-size: 0.9em;
+  }
+  .form--enquiry input, .form--contact input, .dashboard .form--hotel input {
+    font-size: 0.7em;
+  }
+  .contact--box--container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .nav-link {
+    font-size: 0.9em;
+    padding: 2% 2% 2% 2%;
+  }
+  .nav-form input {
+    padding: 0.5% 2% 0.5% 5%;
+    width: 50px;
+    font-size: 0.6em;
+  }
+  .nav-form button {
+    width: 60px;
+  }
+  .hoteldiv, .hoteldiv__specific {
+    width: 270px;
+    margin: 1%;
+    margin-bottom: 5%;
+  }
+  .hoteldiv__specific {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  .hoteldiv__specific li {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

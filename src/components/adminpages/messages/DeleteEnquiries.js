@@ -1,19 +1,32 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { confirmAlert } from "react-confirm-alert";
 import { BaseUrl, headers, DELETE } from "../../constants/Constants";
 
 function DeleteEnquiries(props) {
 
-    const history = useHistory();
+    function deleteAlert() {
+        confirmAlert({
+            title: "Are you sure you want to delete?",
+            buttons: [
+                {
+                    label: "Delete",
+                    onClick: () => deleteEnquiryMsg(),
+                },
+                {
+                    label: "Don't delete"
+                },
+            ],
+        });
+    }
 
-    async function deleteMsg() {
-    const url = BaseUrl + "enquiries/" + props.id;
-    const options = { headers, method:DELETE};
-    await fetch(url, options);
-    history.push("/adminpage");
+    async function deleteEnquiryMsg() {
+        const url = BaseUrl + "enquiries/" + props.id;
+        const options = { headers, method: DELETE };
+        await fetch(url, options);
+        window.location.reload(false);
     }
     return (
-        <button className="delete-button" onClick={deleteMsg}>DELETE</button>
+        <button className="delete-button" onClick={deleteAlert}>DELETE</button>
     );
 
 }

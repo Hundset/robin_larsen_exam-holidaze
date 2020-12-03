@@ -6,7 +6,7 @@ export default function Login() {
     const username = "Admin";
     const password = "Admin";
 
-    const location = useLocation(); 
+    const location = useLocation();
 
     const history = useHistory()
 
@@ -19,35 +19,35 @@ export default function Login() {
     const render = () => {
         if (location.pathname === "/adminpage" || location.pathname === "/adminhotel") {
             return (
-            <>
-            <div className="nav-form">
-                <p>Welcome Admin</p> 
-                <Link to="/"><button>Logout</button></Link>
-            </div>
-            </>
+                <>
+                    <div>
+                        <p>Welcome Admin</p>
+                        <Link to="/"><button>Logout</button></Link>
+                    </div>
+                </>
             );
         } else {
             return (
-                <form className="nav-form" onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)}>
                     <input name="userName" placeholder="Username..." ref={register({
                         validate: {
                             userEqual: value => (value === username)
                         }
-                        })}></input>
+                    })}></input>
                     <input name="adminPassword" placeholder="Password..." ref={register({
                         validate: {
                             pwdEqual: value => (value === password)
                         }
-                        })}></input>
-                        <button type="submit">login</button>
+                    })}></input>
+                    <button type="submit">login</button>
                 </form>
             );
         }
     }
     return (
-        <div>
+        <div className="nav-form--container">
             {render()}
         </div>
     );
-    
+
 }

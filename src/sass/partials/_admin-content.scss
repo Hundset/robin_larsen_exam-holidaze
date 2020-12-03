@@ -1,19 +1,32 @@
 @import "./variables";
+@import "./contactpage-and-forms";
 
 .dashboard {
     display: block;
     width: 60%;
     margin: auto;
+    margin-bottom: 5%;
+    padding-bottom: 3%;
     background-color: $content-box;
     color: $body-text;
+
+    h4 {
+       text-align: center;
+       font-family: Ubuntu;
+       color: $body-text;
+    }
 
     &--header {
         background-color: $content-box;
         margin-bottom: 3%;
+        display: flex;
+        justify-content: space-evenly;
 
         &--link {
-            font-family: copperplate;
-            font-size: 1.2em;
+            font-family: Cantarell;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8em;
             color: $secondary-colour;
             text-align: center;
             padding: 2% 0% 2% 0%;
@@ -31,12 +44,6 @@
         margin-bottom: 3%;
         display: flex;
 
-        h4 {
-            text-align: center;
-            font-family: Ubuntu;
-            color: $body-text;
-        }
-
         &--list {
             width: 49%;
             display: inline-block;
@@ -44,6 +51,58 @@
 
         &--list:first-of-type {
             border-right: 2px solid $body-text;
+        }
+    }
+
+    .form--hotel {
+        @extend .form--enquiry;
+        background-color: white;
+
+        input {
+            border: 1px solid $body-text;
+        }
+
+        label {
+            color: $secondary-colour;
+        }
+
+        &--price-guests {
+            @extend .form--enquiry--checkin-checkout; 
+        }
+
+        button {
+            width: 50%;
+            margin-right: 0%;
+            border-radius: 5px;
+        }
+    }
+
+    .form--hotel, .dashboard--hotel-list {
+        box-shadow: 3px 3px 10px darkgray;
+    }
+
+    &--hotel-list {
+        background-color: white;
+        width: 400px;
+        list-style: none;
+        margin: auto;
+        padding-inline-start: 0px;
+        padding-bottom: 3%;
+
+        &--container {
+            background-color: white;
+            width: 80%;
+            margin: auto;
+            padding: 5%;
+            border-bottom: 1px solid $body-text;
+        }
+
+        &--item {
+            text-align: center;
+        }
+
+        &--container:last-of-type {
+            border-bottom: none;
         }
     }
 }
@@ -90,4 +149,19 @@
     margin-bottom: 5%;
     background-color: red;
     font-size: 0.8em;
+
+    &__hotel {
+        @extend .delete-button;
+        width: 50%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+        padding: 3%;
+        border-radius: 4px;
+    }
+}
+
+.delete-button:hover {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
 }

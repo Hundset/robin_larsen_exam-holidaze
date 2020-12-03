@@ -1,0 +1,298 @@
+
+/** DESKTOP **/
+
+@media (max-width: 1300px) {
+
+    //Admin messages
+
+    .dashboard {
+        width: 70%;  
+    }
+}
+
+@media (max-width: 950px) {
+
+    //Admin messages
+
+    .dashboard {
+        width: 85%;  
+    }
+}
+
+@media (max-width: 800px) {
+
+    //Admin page: messages & alert
+
+    .dashboard {
+        width: 90%;  
+    }
+
+    .message-div {
+        width: 200px;
+        font-size: 0.9em; 
+    }
+
+    #react-confirm-alert {
+        width: 40%;
+        top: 40%;
+        left: 28%;
+    
+        h1 {
+            font-size: 0.9em;
+        }
+    
+        button {
+            width: 50%;
+            font-size: 0.9em;
+            padding: 3%;
+        }
+    }
+
+    .message-div {
+        width: 250px; 
+        font-size: 0.8em;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    //Admin messages
+
+    .dashboard {
+        width: 90%; 
+    
+        .message-div {
+            width: 250px; 
+            font-size: 0.8em;
+        }
+    }
+
+    //Nav and links
+
+    .nav__primary {
+        background-color: $primary-colour;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+
+        .nav-link {
+            font-size: 0.7em;
+            padding: 2% 8% 2% 8%;
+            width: 100px;
+            margin: auto;
+        }
+    
+        .logo-link {
+            display: block;
+            margin: auto;
+        }
+
+        .logo {
+            padding-bottom: 0%;
+        }
+    
+        .nav-form--container {
+            display: inline;
+            padding-top: 0%;
+
+            form {
+                height: 50px;
+                width: 300px;
+                margin: auto;
+            }
+    
+            p {
+                margin: 0%;
+                margin-top: 3%;
+                font-size: 0.7em;
+            }
+    
+            input {
+                border: none;
+                text-align: left;;
+                border-radius: 20px;
+                padding: 0.5% 2% 0.5% 1%;
+                margin-right: 2%;
+                width: 70px;
+                font-size: 0.7em;
+            }
+    
+            button {
+                width: 60px;
+                margin: 3% 0% 3% 0%;
+                padding: 0.4%;
+                font-size: 0.6em;
+            }
+        }
+    }
+
+    //hotel content
+
+    .hoteldiv {
+        width: 80%;
+    }
+
+    //contact page
+
+    .contact--box--container {
+        width: 40%;
+    }
+} 
+
+@media (max-width: 600px) {
+       
+    //Admin page
+
+    .dashboard {
+        width: 96%; 
+
+    &--header--link {
+        font-size: 0.6em;
+    }
+
+    .message-div {
+        width: 210px; 
+        font-size: 0.7em;
+        }
+    }
+}
+
+/** MOBILE **/
+
+@media screen 
+    and (max-width: 414px)
+ {
+    //Hotel content
+
+    .searchbar {
+        padding-left: 3%;
+    }
+
+    .hotel--list {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .hoteldiv {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 5%;
+
+        &--content--img {
+            height: 100%;
+        }
+    }
+
+    .hoteldiv__specific {
+        width: 340px;
+
+        li {
+            width: 100%;
+        }
+    }
+
+    //enquiry page
+
+    .form--enquiry {
+        width: 80%;
+        font-size: 0.9em;
+        
+        input {
+            font-size: 0.7em;
+        }
+    }
+
+    //contact page
+
+    .contact--box--container {
+        width: 50%;
+    }
+
+    //Admin page
+
+    .dashboard {
+        width: 100%; 
+        
+        &--messages {
+            display: block;
+
+            &--list {
+                display: block;
+                width: 90%;
+                margin: auto;
+            }
+
+            &--list:first-of-type {
+                border-right: none;
+            }
+        }
+    }
+
+    .message-div {
+        font-size: 0.9em; 
+        margin: auto;
+        margin-bottom: 5%;
+    }
+
+    #react-confirm-alert {
+        width: 40%;
+        top: 40%;
+        left: 28%;
+    
+        h1 {
+            font-size: 0.9em;
+        }
+    
+        button {
+            width: 50%;
+            font-size: 0.9em;
+            padding: 3%;
+        }
+    }
+
+    .dashboard--hotel-list {
+        width: 80%;
+    }
+
+}
+
+@media screen 
+    and (max-width: 360px)
+ {  
+
+    //Nav & links
+
+    .nav-link {
+        font-size: 0.5em;
+        padding: 2% 2% 2% 2%;
+    }
+
+    .nav-form { 
+
+        input {
+            padding: 0.5% 2% 0.5% 5%;
+            width: 50px;
+            font-size: 0.6em;
+        }
+
+        button {
+            width: 60px;
+        }
+    }
+
+    //Hotel content
+
+    .hoteldiv {
+        width: 270px;
+        margin: 1%;
+        margin-bottom: 5%;
+    }
+
+    .hoteldiv__specific {
+        width: 85%;
+        margin: auto;
+        margin-bottom: 10%;
+    }
+ }

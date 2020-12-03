@@ -2,7 +2,7 @@ import React from "react";
 import { confirmAlert } from "react-confirm-alert";
 import { BaseUrl, headers, DELETE } from "../../constants/Constants";
 
-function DeleteContact(props) {
+function DeleteHotel(props) {
 
     function deleteAlert() {
         confirmAlert({
@@ -10,7 +10,7 @@ function DeleteContact(props) {
             buttons: [
                 {
                     label: "Delete",
-                    onClick: () => deleteContactMsg(),
+                    onClick: () => deleteThisHotel(),
                 },
                 {
                     label: "Don't delete"
@@ -19,16 +19,16 @@ function DeleteContact(props) {
         });
     }
 
-    async function deleteContactMsg() {
-        const url = BaseUrl + "contacts/" + props.id;
+    async function deleteThisHotel() {
+        const url = BaseUrl + "establishments/" + props.id;
         const options = { headers, method: DELETE };
         await fetch(url, options);
         window.location.reload(false);
     }
     return (
-        <button className="delete-button" onClick={deleteAlert}>DELETE</button>
+        <button className="delete-button__hotel" onClick={deleteAlert}>DELETE</button>
     );
 
 }
 
-export default DeleteContact;
+export default DeleteHotel;
