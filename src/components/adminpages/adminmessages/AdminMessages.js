@@ -23,11 +23,7 @@ function AdminMessages() {
             .then((response) => response.json())
             .then((json) => {
                 console.log(json);
-                if (json.error) {
-                    setContacts([]);
-                } else {
-                    setContacts(json);
-                }
+                setContacts(json);
             })
             .catch((error) => {
                 console.log(error);
@@ -41,11 +37,7 @@ function AdminMessages() {
             .then((response) => response.json())
             .then((json) => {
                 console.log(json);
-                if (json.error) {
-                    setEnquiries([]);
-                } else {
-                    setEnquiries(json);
-                }
+                setEnquiries(json);
             })
             .catch((error) => {
                 console.log(error)
