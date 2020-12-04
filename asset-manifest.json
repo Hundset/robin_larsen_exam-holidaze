@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/robin_larsen_exam-holidaze/static/css/main.bbfb8d06.chunk.css",
+    "main.js": "/robin_larsen_exam-holidaze/static/js/main.bbf79bb8.chunk.js",
+    "main.js.map": "/robin_larsen_exam-holidaze/static/js/main.bbf79bb8.chunk.js.map",
+    "runtime-main.js": "/robin_larsen_exam-holidaze/static/js/runtime-main.bef17b53.js",
+    "runtime-main.js.map": "/robin_larsen_exam-holidaze/static/js/runtime-main.bef17b53.js.map",
+    "static/js/2.1cc3587a.chunk.js": "/robin_larsen_exam-holidaze/static/js/2.1cc3587a.chunk.js",
+    "static/js/2.1cc3587a.chunk.js.map": "/robin_larsen_exam-holidaze/static/js/2.1cc3587a.chunk.js.map",
+    "index.html": "/robin_larsen_exam-holidaze/index.html",
+    "precache-manifest.21da0a7f4960506c67c877bbe41b95d6.js": "/robin_larsen_exam-holidaze/precache-manifest.21da0a7f4960506c67c877bbe41b95d6.js",
+    "service-worker.js": "/robin_larsen_exam-holidaze/service-worker.js",
+    "static/css/main.bbfb8d06.chunk.css.map": "/robin_larsen_exam-holidaze/static/css/main.bbfb8d06.chunk.css.map",
+    "static/js/2.1cc3587a.chunk.js.LICENSE.txt": "/robin_larsen_exam-holidaze/static/js/2.1cc3587a.chunk.js.LICENSE.txt",
+    "static/media/style.scss": "/robin_larsen_exam-holidaze/static/media/leonard-rb-S-gj2BlwWjU-unsplash.fcc80f51.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bef17b53.js",
+    "static/js/2.1cc3587a.chunk.js",
+    "static/css/main.bbfb8d06.chunk.css",
+    "static/js/main.bbf79bb8.chunk.js"
+  ]
+}
