@@ -3,10 +3,13 @@ import { BaseUrl, headers } from "../../constants/Constants";
 import Search from "./Search";
 import HotelObj from "../hotel/HotelObj";
 import ErrorMessage from "../../errormessage/ErrorMessage";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export function Home() {
     const [hotels, setHotels] = useState([]);
     const [searchedHotels, setSearchedHotels] = useState([]);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
 
     const url = BaseUrl + "establishments";
@@ -25,7 +28,8 @@ export function Home() {
             .catch((error) => {
                 console.log(error)
                 setError(ErrorMessage);
-            });
+            })
+            .finally(() => setLoading(false));
     }, []);
 
     const searchHotels = function (e) {
@@ -43,6 +47,12 @@ export function Home() {
         setSearchedHotels(results);
     }
 
+    const renderLoading = () => {
+        if (loading) {
+            return <Loader type="TailSpin" color="white" height={80} width={80} />
+        }
+    }
+
     return (
         <>
             <h2 className="subtitle">Hotels</h2>
@@ -50,6 +60,8 @@ export function Home() {
             <Search handleSearch={searchHotels} />
 
             <div className="hotel--list">
+
+                {renderLoading()}
 
                 {error && <div>{error}</div>}
 

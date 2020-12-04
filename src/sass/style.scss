@@ -47,6 +47,10 @@ body:after {
     background-size: cover;
 }
 
+.spinner--container {
+    text-align: center;
+}
+
 //nav and links
 
 .nav__primary {
@@ -103,6 +107,7 @@ body:after {
             border-radius: 20px;
             padding: 0.5% 2% 0.5% 5%;
             width: 100px;
+            font-size: 0.8em;
         }
 
         button {

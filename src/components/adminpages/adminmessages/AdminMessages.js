@@ -3,6 +3,8 @@ import { BaseUrl, headers } from "../../constants/Constants";
 import ContactMessages from "../messages/ContactMessages";
 import EnquiryMessages from "../messages/EnquiryMessages";
 import ErrorMessage from "../../errormessage/ErrorMessage";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 function AdminMessages() {
     const contactUrl = BaseUrl + "contacts"
@@ -12,6 +14,7 @@ function AdminMessages() {
     const [enquiries, setEnquiries] = useState([]);
     const [contactError, setContactError] = useState();
     const [enquiryError, setEnquiryError] = useState();
+    const [loading, setLoading] = useState(true);
 
     const options = { headers };
 
@@ -29,7 +32,8 @@ function AdminMessages() {
             .catch((error) => {
                 console.log(error);
                 setContactError(ErrorMessage);
-            });
+            })
+            .finally(() => setLoading(false));
     }, []);
 
     useEffect(() => {
@@ -46,13 +50,26 @@ function AdminMessages() {
             .catch((error) => {
                 console.log(error)
                 setEnquiryError(ErrorMessage);
-            });
+            })
+            .finally(() => setLoading(false));
     }, []);
+
+    const renderLoading = () => {
+        if (loading) {
+            return (
+                <div className="spinner--container">
+                    <Loader className="spinner" type="TailSpin" color="#C15036" height={80} width={80} />
+                </div>
+            );
+        }
+    }
 
     return (
         <>
             <div className="dashboard--messages--list">
                 <h4>Contact Messages</h4>
+
+                {renderLoading()}
 
                 {contactError && <div>{contactError}</div>}
 
@@ -66,6 +83,8 @@ function AdminMessages() {
             </div>
             <div className="dashboard--messages--list">
                 <h4>Enquiries</h4>
+
+                {renderLoading()}
 
                 {enquiryError && <div>{enquiryError}</div>}
 

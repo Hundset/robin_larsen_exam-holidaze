@@ -3,10 +3,13 @@ import { BaseUrl, headers } from "../../constants/Constants";
 import DeleteEnquiries from "./DeleteEnquiries";
 import { DateTime } from "luxon";
 import ErrorMessage from "../../errormessage/ErrorMessage";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 function EnquiryMessages({ id, name, email, establishmentId, checkIn, checkOut }) {
     const [hotelName, setHotelName] = useState();
     const [error, setError] = useState();
+    const [loading, setLoading] = useState(true);
 
     const checkinDate = DateTime.fromISO(checkIn)
     const checkinFormatted = checkinDate.toLocaleString(DateTime.DATE_SHORT);
@@ -31,6 +34,7 @@ function EnquiryMessages({ id, name, email, establishmentId, checkIn, checkOut }
                 console.log(error);
                 setError(ErrorMessage);
             })
+            .finally(() => setLoading(false));
     })
 
     return (
